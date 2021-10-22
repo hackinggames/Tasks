@@ -13,6 +13,7 @@ using System.Management;
 using System.Diagnostics;
 using System.Threading;
 
+// TODO: Cleanup and change the code style
 namespace Tasks
 {
 
@@ -24,9 +25,10 @@ namespace Tasks
             RenderStartupsOnListWiew();
         }
 
-        private void ClearStartupList()
+        private void RefreshList()
         {
             StartupProcesses.Items.Clear();
+            RenderStartupsOnListWiew();
         }
 
         private void RenderStartupsOnListWiew()
@@ -46,7 +48,7 @@ namespace Tasks
         private void button1_Click(object sender, EventArgs e)
         {
     // idk
-            
+            // update, i still dont know can someone please help me with this
           
 
 
@@ -67,7 +69,9 @@ namespace Tasks
         {
             try
             {
+                // will add a method to auto update the list when the window closes
                 Process.Start("explorer.exe", @Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup");
+                RefreshList();
             }
             catch (Exception ex)
             {
@@ -78,16 +82,28 @@ namespace Tasks
 
         private void button2_Click(object sender, EventArgs e)
         {
+        // Opens the file dialog for selecting a program
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "All|*.*" })
             {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                txtFileName.Text = ofd.FileName;
-                FileInfo fileInfo = new FileInfo(txtFileName.Text);
-                txtTargetPath.Text = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup", fileInfo.Name);
-                File.Copy(txtFileName.Text, txtTargetPath.Text, true);
-                Thread.Sleep(30);
-                ClearStartupList();
-                RenderStartupsOnListWiew();
+                if (ofd.ShowDialog() == DialogResult.OK)  // If statement because if you closed it would error
+                {
+                string program = ofd.FileName.ToString();
+                
+                    txtFileName.Text = ofd.FileName; 
+                    FileInfo fileInfo = new FileInfo(txtFileName.Text);
+                    txtTargetPath.Text = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup", fileInfo.Name);
+                    File.Copy(txtFileName.Text, txtTargetPath.Text, true);
+                    Thread.Sleep(30);
+                    RefreshList();
+                }
+                else
+                {
+                  RefreshList();
+                }
+
+
+          
+
 
             }
 
@@ -120,6 +136,11 @@ namespace Tasks
 
             }
 
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            RefreshList();
         }
     }
 }

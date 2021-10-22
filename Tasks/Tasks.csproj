@@ -4,19 +4,31 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>Tasks64x64.ico</ApplicationIcon>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <Version>2.0.0</Version>
+    <ApplicationIcon>Tasks 256x256 Logo.ico</ApplicationIcon>
+    <Version>2.1.0</Version>
     <Copyright>LiteTools 2021</Copyright>
-    <Description>Tasks is a simple program allowing you to clean your computer, remove bloatware as well as control startup programs.</Description>
+    <Description>About
+Tasks is an application that helps optimize computer performance. Some of Tasks's features include an advanced cleanup tool for unnecessary system files and application caches and a startup manager that lets you manage programs that run on startup.</Description>
     <Company>LiteTools</Company>
     <Authors>Byron</Authors>
     <RepositoryUrl>https://github.com/LiteTools/Tasks</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon>Tasks 256x256 Logo.png</PackageIcon>
+    <PackageIconUrl />
+    <NeutralLanguage>en</NeutralLanguage>
+    <Win32Resource />
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ByteSize" Version="2.0.0" />
-    <PackageReference Include="Ookii.Dialogs.WinForms" Version="1.2.0" />
+    <PackageReference Include="ByteSize" Version="2.1.0" />
+    <PackageReference Include="Ookii.Dialogs.WinForms" Version="3.0.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
     <PackageReference Include="System.Management" Version="5.0.0" />
   </ItemGroup>
 
@@ -47,9 +59,6 @@
     <None Update="Scripts\BatFiles\killedge.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Scripts\BatFiles\killfirefox.bat">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Scripts\BatFiles\displayarp.bat">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -69,10 +78,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Analyze\" />
+    <None Include="..\..\..\Software Development\Tasks\Tasks Icons\Tasks New Logo Revision #3\Tasks 256x256 Logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

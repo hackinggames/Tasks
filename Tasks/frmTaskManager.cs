@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// TODO: Cleanup and change the code style
 namespace Tasks
 {
     public partial class frmTaskManager : Form
@@ -86,6 +87,10 @@ namespace Tasks
             return number.ToString();
         }
 
+        public void clearProcesses()
+        {
+            listView1.Clear();
+        }
         public void renderProcessesOnListView()
         {
             // Create an array to store the processes
@@ -159,7 +164,10 @@ namespace Tasks
         {
             try
             {
-             
+               // Process[] processList = Process.GetProcesses();
+              //  processList[].Kill();
+               // clearProcesses();
+               // renderProcessesOnListView();
             }
             catch (Exception ex)
             {
@@ -169,9 +177,18 @@ namespace Tasks
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            renderProcessesOnListView();
+         
 
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // coming soon
+        }
     }
 }

@@ -1,8 +1,5 @@
-﻿
-namespace Tasks.Tasks_v3._0._0
-{
-    partial class frmNewMenu
-    {
+﻿namespace Tasks.Tasks_v3._0._0 {
+    partial class frmInterface {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -12,12 +9,8 @@ namespace Tasks.Tasks_v3._0._0
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) { components.Dispose(); }
             base.Dispose(disposing);
         }
 
@@ -27,8 +20,9 @@ namespace Tasks.Tasks_v3._0._0
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInterface));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -41,12 +35,21 @@ namespace Tasks.Tasks_v3._0._0
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,6 +66,7 @@ namespace Tasks.Tasks_v3._0._0
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.pictureBox5);
             this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -76,20 +80,24 @@ namespace Tasks.Tasks_v3._0._0
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(-4, -4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 689);
+            this.panel1.Size = new System.Drawing.Size(175, 713);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Tasks.Properties.Resources.Cleanup_50x50_White;
+            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox5.Image = global::Tasks.Properties.Resources.SettingsWhite;
             this.pictureBox5.Location = new System.Drawing.Point(52, 530);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(53, 42);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox4.Image = global::Tasks.Properties.Resources.Cleanup_50x50_White;
             this.pictureBox4.Location = new System.Drawing.Point(52, 425);
             this.pictureBox4.Name = "pictureBox4";
@@ -99,6 +107,7 @@ namespace Tasks.Tasks_v3._0._0
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::Tasks.Properties.Resources.Cleanup_50x50_White;
             this.pictureBox3.Location = new System.Drawing.Point(52, 324);
             this.pictureBox3.Name = "pictureBox3";
@@ -108,21 +117,26 @@ namespace Tasks.Tasks_v3._0._0
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::Tasks.Properties.Resources.Cleanup_50x50_White;
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::Tasks.Properties.Resources.Startup_Programs_White;
             this.pictureBox2.Location = new System.Drawing.Point(52, 214);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(53, 42);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 6;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = global::Tasks.Properties.Resources.Cleanup_50x50_White;
             this.pictureBox1.Location = new System.Drawing.Point(52, 110);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(53, 42);
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panel6
             // 
@@ -131,6 +145,7 @@ namespace Tasks.Tasks_v3._0._0
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(10, 42);
             this.panel6.TabIndex = 4;
+            this.panel6.Visible = false;
             // 
             // panel5
             // 
@@ -139,6 +154,7 @@ namespace Tasks.Tasks_v3._0._0
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(10, 42);
             this.panel5.TabIndex = 3;
+            this.panel5.Visible = false;
             // 
             // panel4
             // 
@@ -147,6 +163,7 @@ namespace Tasks.Tasks_v3._0._0
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(10, 42);
             this.panel4.TabIndex = 3;
+            this.panel4.Visible = false;
             // 
             // panel3
             // 
@@ -155,6 +172,7 @@ namespace Tasks.Tasks_v3._0._0
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(10, 42);
             this.panel3.TabIndex = 3;
+            this.panel3.Visible = false;
             // 
             // panel2
             // 
@@ -163,16 +181,92 @@ namespace Tasks.Tasks_v3._0._0
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(10, 42);
             this.panel2.TabIndex = 2;
+            this.panel2.Visible = false;
             // 
-            // frmNewMenu
+            // panel7
+            // 
+            this.panel7.Location = new System.Drawing.Point(170, -4);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(939, 689);
+            this.panel7.TabIndex = 2;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.linkLabel2);
+            this.groupBox1.Controls.Add(this.linkLabel1);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Location = new System.Drawing.Point(929, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(174, 350);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Support Articles";
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLabel2.Location = new System.Drawing.Point(6, 54);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(126, 15);
+            this.linkLabel2.TabIndex = 1;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "New Menu Navigation";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.linkLabel1.Location = new System.Drawing.Point(6, 22);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(123, 15);
+            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Application Crashing?";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 19.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label2.Location = new System.Drawing.Point(180, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(205, 36);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tasks Dashboard";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::Tasks.Properties.Resources.Tasks_256x256_v2;
+            this.pictureBox6.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(172, 82);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 10;
+            this.pictureBox6.TabStop = false;
+            // 
+            // frmInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(1091, 686);
+            this.ClientSize = new System.Drawing.Size(1110, 681);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
-            this.Name = "frmNewMenu";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "frmInterface";
             this.Text = "Tasks";
+            this.Load += new System.EventHandler(this.frmNewMenu_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -180,7 +274,11 @@ namespace Tasks.Tasks_v3._0._0
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,5 +296,12 @@ namespace Tasks.Tasks_v3._0._0
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

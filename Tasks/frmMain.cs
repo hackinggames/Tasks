@@ -6,22 +6,25 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// TODO: Cleanup and change the code style
 namespace Tasks
 {
     public partial class frmMain : Form
     {
+      
         public frmMain()
         {
             InitializeComponent();
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -42,12 +45,6 @@ namespace Tasks
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            frmRemoveBloat RemoveBloat = new frmRemoveBloat();
-            RemoveBloat.Show();
-        }
-
         private void button6_Click(object sender, EventArgs e)
         {
             frmAbout About = new frmAbout();
@@ -61,8 +58,8 @@ namespace Tasks
 
         private void label1_Click(object sender, EventArgs e)
         {
-            //frmAnalyze Analyze = new frmAnalyze();
-            //Analyze.Show();
+            //Tasks_v3._0._0.frmInterface NewMenu = new Tasks_v3._0._0.frmInterface();
+           //NewMenu.Show();
         }
     }
 }
