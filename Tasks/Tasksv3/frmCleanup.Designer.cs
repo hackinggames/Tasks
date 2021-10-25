@@ -795,7 +795,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button3.Location = new System.Drawing.Point(762, 634);
+            this.button3.Location = new System.Drawing.Point(762, 640);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(165, 44);
             this.button3.TabIndex = 57;
@@ -817,13 +817,13 @@
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label9.Location = new System.Drawing.Point(12, 651);
+            this.label9.Location = new System.Drawing.Point(12, 663);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(118, 30);
+            this.label9.Size = new System.Drawing.Size(73, 15);
             this.label9.TabIndex = 60;
-            this.label9.Text = "Deleted Files: 0\r\nDeleted Directories: 0";
+            this.label9.Text = "Deleted Files\r\n";
             // 
-            // frmNewCleanup
+            // frmCleanup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -833,7 +833,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.tabControl1);
-            this.Name = "frmNewCleanup";
+            this.Name = "frmCleanup";
             this.Text = "Cleanup";
             this.Load += new System.EventHandler(this.frmNewCleanup_Load);
             this.tabControl1.ResumeLayout(false);

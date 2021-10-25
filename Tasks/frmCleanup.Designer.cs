@@ -205,7 +205,8 @@
             // taskDialog1
             // 
             this.taskDialog1.Buttons.Add(this.taskDialogButton1);
-            this.taskDialog1.Content = "Clearing browser cache will log you out of all websites you previously logged into. Proceed with caution.";
+            this.taskDialog1.Content = "Clearing browser cache will log you out of all websites you previously logged int" +
+    "o. Proceed with caution.";
             this.taskDialog1.MainIcon = Ookii.Dialogs.WinForms.TaskDialogIcon.Warning;
             this.taskDialog1.MainInstruction = "Warning";
             this.taskDialog1.WindowIcon = ((System.Drawing.Icon)(resources.GetObject("taskDialog1.WindowIcon")));
@@ -671,7 +672,6 @@
             this.cbChromeCache.Text = "Cache";
             this.cbChromeCache.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.cbChromeCache.UseVisualStyleBackColor = true;
-            this.cbChromeCache.CheckedChanged += new System.EventHandler(this.cbChromeCache_CheckedChanged);
             this.cbChromeCache.CheckStateChanged += new System.EventHandler(this.cbChromeCache_CheckStateChanged);
             // 
             // cbChromeSessions
@@ -966,10 +966,10 @@
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label13.Location = new System.Drawing.Point(6, 12);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(635, 38);
+            this.label13.Size = new System.Drawing.Size(631, 38);
             this.label13.TabIndex = 0;
-            this.label13.Text = "This feature sorts out all your extensions for your supported browser, and you can" +
-    "select which ones\r\n you want to remove.";
+            this.label13.Text = "This feature sorts out all your extensions for your supported browser, and you ca" +
+    "nselect which ones\r\n you want to remove.";
             // 
             // tabPage4
             // 
@@ -992,7 +992,7 @@
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(22)))), ((int)(((byte)(20)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.textBox1.Location = new System.Drawing.Point(12, 414);
+            this.textBox1.Location = new System.Drawing.Point(12, 385);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
@@ -1023,6 +1023,7 @@
             this.button4.Text = "Uninstall Edge";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button6
             // 

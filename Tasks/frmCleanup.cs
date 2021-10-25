@@ -14,8 +14,6 @@ using System.Threading;
 using System.Windows.Forms;
 using ByteSizeLib;
 
-// TODO: Cleanup and change the code style
-// TODO: Work on Remove Bloat, here's a helpful article: https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.powershell?view=powershellsdk-7.0.0
 namespace Tasks
 {
 
@@ -82,12 +80,11 @@ namespace Tasks
             if (cbExplorerDownloads.Checked)
                 try
                 {
-
-                    if (DeleteAllFiles(downloads)) CleanupLogsLBox.Items.Add("Downloads Folder Cleaned.");
+                  if (DeleteAllFiles(downloads)) CleanupLogsLBox.Items.Add("Downloads Folder Cleaned.");
                 }
                 catch (Exception ex)
                 {
-                    CleanupLogsLBox.Items.Add("Error clearing the Downloads Folder. " + ex);
+                    CleanupLogsLBox.Items.Add("Error cleaning the Downloads Folder. " + ex);
 
                 }
 
@@ -128,11 +125,11 @@ namespace Tasks
                 }
                 catch (Exception ex)
                 {
-                    CleanupLogsLBox.Items.Add("Error while cleaning Prefetch. " + ex);
+                    CleanupLogsLBox.Items.Add("Error while deleting Prefetch. " + ex);
                 }
             }
 
-            // Chrome
+           
 
             if (cbChromeCache.Checked)
             {
@@ -159,7 +156,7 @@ namespace Tasks
                         }
                         catch (Exception ex)
                         {
-                            CleanupLogsLBox.Items.Add("erorr test ." + ex);
+                            CleanupLogsLBox.Items.Add("Error deleting Chrome Cache. " + ex);
                         }
 
                         // If DeleteAllFiles returns false, set the isDeleted value to false
@@ -226,7 +223,7 @@ namespace Tasks
                 }
                 catch (Exception ex)
                 {
-                    CleanupLogsLBox.Items.Add("There was an error trying to clean Discord Cookies." + ex);
+                    CleanupLogsLBox.Items.Add("Error deleting Discord Cookies." + ex);
                 }
 
             //Firefox
@@ -309,13 +306,13 @@ namespace Tasks
                     }
                     catch (Exception ex)
                     {
-                        CleanupLogsLBox.Items.Add("Error while trying to delete Firefox Shader Cache! \n" + ex);
+                        CleanupLogsLBox.Items.Add("Error trying to delete Firefox Shader Cache. " + ex);
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    CleanupLogsLBox.Items.Add("Error while trying to delete firefox cache! \n" + ex);
+                    CleanupLogsLBox.Items.Add("Error trying to delete firefox cache. " + ex);
                 }
 
 
@@ -464,14 +461,12 @@ namespace Tasks
                 File.Delete(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cookies");
                 var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\IndexedDB\\");
                 if (DeleteAllFiles(directory)) CleanupLogsLBox.Items.Add("Edge Cookies Deleted.");
-
-
-
-                CleanupLogsLBox.Items.Add("Edge Cookies Cleaned.");
             }
 
             if (cbEdgeCache.Checked) //Edge cache
             {
+             try
+                 {
                 var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Cache\\");
                 var directory2 = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Code Cache\\");
                 var directory3 = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\GPUCache\\");
@@ -481,6 +476,11 @@ namespace Tasks
                 var directory7 = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Edge\\User Data\\GrShaderCache\\GPUCache\\");
                 var directory8 = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Microsoft\\Edge\\User Data\\Default\\Service Worker\\Database\\");
                 if (DeleteAllFiles(directory) & DeleteAllFiles(directory2) & DeleteAllFiles(directory3) & DeleteAllFiles(directory4) & DeleteAllFiles(directory5) & DeleteAllFiles(directory6) & DeleteAllFiles(directory7) & DeleteAllFiles(directory8)) CleanupLogsLBox.Items.Add("Edge Cache Deleted.");
+                }
+                catch
+                {
+                CleanupLogsLBox.Items.Add("Error while deleting Edge Cache.");
+                }
             }
 
             if (cbSystemEventLogs.Checked)
@@ -513,13 +513,13 @@ namespace Tasks
             if (cbSystemDirectXCache.Checked)
             {
                 var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\D3DSCache");
-                if (DeleteAllFiles(directory)) CleanupLogsLBox.Items.Add("DirectX Shader Cache Cleaned.");
+                if (DeleteAllFiles(directory)) CleanupLogsLBox.Items.Add("DirectX Shader Cache Deleted.");
             }
 
             if (cbSystemMemDumps.Checked)
             {
                 var directory = new DirectoryInfo(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\CrashDumps\\");
-                if (DeleteAllFiles(directory)) CleanupLogsLBox.Items.Add("System Memory Dumps Cleaned.");
+                if (DeleteAllFiles(directory)) CleanupLogsLBox.Items.Add("System Memory Dumps Deleted.");
             }
 
 
@@ -577,6 +577,7 @@ namespace Tasks
             }
 
 
+
             if (CleanupLogsLBox.Items.Count < 2) btnCopyLogs.Enabled = true;
 
 
@@ -607,14 +608,7 @@ namespace Tasks
 
                 }
             }
-
-           
-
-
         }
-
-
-
         private void frmCleanup_Load(object sender, EventArgs e)
         {
             tabControl1.SelectedIndexChanged += new EventHandler(Tabs_SelectedIndexChanged);
@@ -896,7 +890,7 @@ namespace Tasks
         {
             try
             {
-                RunFile.RunBat("Scripts/Debloater/DisableCortana.ps1", true);
+                Process.Start("powershell", "-ExecutionPolicy Bypass -File Scripts/Debloater/DisableCortana.ps1");
             }
             catch (Exception ex)
             {
@@ -908,12 +902,19 @@ namespace Tasks
         {
             try
             {
-                RunFile.RunBat("Scripts/Debloater/UninstallOneDrive.ps1", true);
+                Process.Start("powershell", "-ExecutionPolicy Bypass  -File Scripts/Debloater/UninstallOneDrive.ps1");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred." + ex);
             }
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            RunFile.RunBat("removeedge.bat", true);
         }
 
         private void DirectoryExists()
@@ -1011,10 +1012,7 @@ namespace Tasks
            
         }
 
-        private void cbChromeCache_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }
 

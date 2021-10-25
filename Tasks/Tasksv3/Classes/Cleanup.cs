@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tasks.Cleanup_Modules
+namespace Tasks.CleanupModules
 {
     public class Cleanup
     {
@@ -20,9 +20,12 @@ namespace Tasks.Cleanup_Modules
         public string[] windowsTemp = { "C:\\Windows\\Temp", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\Local\\Temp" }; // might be incorrect.
 
         
-        // Proper Syntax: Clean(chromeSubDir, chromeCacheDir);
-        
-        public void Clean(string subdir, string cacheDir)
+        /// <summary>
+        /// The function for Cleanup. Deletes files and folders from directories.
+        /// </summary>
+        /// <param name="subdir"></param>
+        /// <param name="cacheDir"></param>
+        public static void Clean(string subdir, string cacheDir)
         {
             List<DirectoryInfo> directoryInfos = new List<DirectoryInfo>();
 
@@ -40,6 +43,25 @@ namespace Tasks.Cleanup_Modules
                 // If DeleteAllFiles returns false, set the isDeleted value to false
                 // WARN: ISDELETED IS ALWAYS TRUE
                 if (!Delete(d)) isDeleted = false;
+            }
+        }
+
+        /// <summary>
+        /// Gets the total size of all files(?) in a folder and its subdirectories.
+        /// </summary>
+        public static void GetFolderSize(DirectoryInfo dirsize)
+        {
+
+            foreach(var files in dirsize.GetFiles("*", SearchOption.AllDirectories))
+            {
+                try
+                {
+                    Strings.tempfolder = +files.Length;
+                }
+                catch
+                {
+         
+                }
             }
         }
 
